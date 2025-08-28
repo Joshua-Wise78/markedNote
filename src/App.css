@@ -1,0 +1,65 @@
+/* General App Styling */
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f9;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Common styles for both panes */
+.editor-pane,
+.preview-pane {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't add to height/width */
+}
+
+/* Editor Specifics */
+.editor-pane {
+  border: none;
+  resize: none;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ffffff;
+  color: #333;
+  border-right: 1px solid #ddd;
+}
+
+.editor-pane:focus {
+  outline: 2px solid #007bff;
+}
+
+/* Preview Specifics */
+.preview-pane {
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* Stack panes vertically */
+  }
+
+  .editor-pane {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    height: 50vh; /* Give each pane half the screen height */
+  }
+
+  .preview-pane {
+    height: 50vh;
+  }
+}
